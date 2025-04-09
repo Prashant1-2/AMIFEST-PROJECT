@@ -1,0 +1,41 @@
+{% extends 'nav.html' %}
+{% block title%}
+| Register
+{% endblock title%}
+
+
+{% block body %}
+
+  {%block content%}
+   <center>
+   <h1 style="background-color:yellowgreen;"><b> Register For Event/Placement </b> </h1>
+   <br/><br/>
+   {% if submitted %}
+   
+   <div class="alert alert-dark" role="alert">
+   
+ you are registered!
+</div>
+
+   {% else %}
+
+   <form action="" method="POST" style="width: 800px;">
+    {% csrf_token %}
+
+
+    {{ form.as_p }}
+
+    <input type="submit" value="Submit" class="btn btn-secondary">
+
+
+   </form>
+    {% endif %}
+   </center>
+   {% endblock%}
+
+ {%endblock body%}  
+
+
+
+
+

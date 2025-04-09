@@ -1,0 +1,54 @@
+{% extends 'nav.html' %}
+
+{% block title %}
+| Placements
+{% endblock title %}
+
+{% block body %}
+
+
+<div class="container my-1">
+</div>
+<div class="container my-3">
+<style>
+h3 {text-align: center;}
+
+</style>
+
+<h3><font color="white"><i><b>Companies</b></i></font></h3>
+</div>
+  <div class="container my-5">
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+      {% for placement in placements %}
+      <div class="col">
+        <div class="card text-white bg-dark card border-dark">
+          <img  height="250px" width=auto  src="{{placement.Image.url}}" alt="">
+          <div class="card-body">
+            <h3 class="card-text">{{placement.Name}}</h3>
+            <p class="card-text"><font color="#5cbdb9" >Start of Registration </font>:- {{placement.SOR}}</p>
+            <p class="card-text"><font color="#5cbdb9" >End of Registration </font>:- {{placement.EOR}}</p>
+            <p class="card-text"><font color="#5cbdb9" >Stream </font>:- {{placement.Stream}}</p>
+            <p class="card-text"><font color="#5cbdb9" >CTC </font>:- {{placement.CTC}}</p>
+            <p class="card-text"><font color="#5cbdb9" >Profile </font>:- {{placement.Profile}}</p>
+            <p class="card-text"><font color="#5cbdb9" >Cordinator </font>:- {{placement.Cordinator}}</p>
+            <p class="card-text"><font color="#5cbdb9" >Description </font>:- {{placement.Discription}}</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-outline-secondary"><a href="/register">Register </a></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+
+
+
+
+
+    </div>
+  </div>
+
+  {% endblock body %}
